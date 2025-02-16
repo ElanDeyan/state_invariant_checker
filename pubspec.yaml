@@ -1,0 +1,16 @@
+name: state_invariant_checker
+description: A Flutter package to ensure state invariants within a StatefulWidget.
+version: 1.0.0
+
+environment:
+  sdk: ^3.7.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^7.0.0
