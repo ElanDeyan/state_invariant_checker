@@ -1,6 +1,6 @@
 # State Invariant Checker
 
-Based on Eiffel's language invariants and with a little help from ChatGPT, this package adds an extra tool to your development process. It allows you to run invariant checks before every build in debug mode, ensuring that your app's state remains consistent throughout its lifecycle.
+Based on Eiffel's language invariants and with a help from ChatGPT, this package adds an extra tool to your development process. It allows you to run invariant checks at the start of every build in debug mode, ensuring that your app's state remains consistent throughout its lifecycle.
 
 ## Features
 
@@ -11,7 +11,7 @@ Based on Eiffel's language invariants and with a little help from ChatGPT, this 
 
 ## Installation
 
-Add the following dependency to your pubspec.yaml file:
+Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
@@ -26,7 +26,7 @@ flutter pub get
 
 ## Usage
 
-Wrap your app or a specific widget subtree with the StateInvariantChecker widget. Define your invariants as pure functions (without side effects) that return a bool indicating whether the invariant holds true.
+Wrap a `StatefulWidget` with the `StateInvariantChecker` widget. Define your invariants as pure functions (without side effects) that return a `bool` indicating whether the invariant holds true.
 
 Example:
 
@@ -140,13 +140,14 @@ child: The widget subtree to be displayed.
 ### Behavior
 
 During the build process, if in debug mode, the widget iterates over the provided invariants and asserts each one.
-The check leverages pattern matching to provide a helpful error message if an invariant is violated.
-Contributing
+
+## Contributing
+
 Contributions are welcome! If you have suggestions or improvements, please open an issue or submit a pull request.
 
 ## Acknowledgements
 
-ChatGPT: Special thanks to ChatGPT for the guidance on how to run functions before every build. Its assistance helped refine the implementation and documentation of this package.
+ChatGPT: Special thanks to ChatGPT for the guidance on how to run functions at the start of every build. Its assistance also helped refine the implementation and documentation of this package.
 
 ## License
 
