@@ -24,7 +24,7 @@ class _MyCounterPageState extends State<MyCounterPage> {
   @override
   Widget build(BuildContext context) {
     return StateInvariantChecker(
-      invariants: {_valueShouldBeZeroOrPositive, _valueShouldBeLessThanTen},
+      invariants: [_valueShouldBeZeroOrPositive, _valueShouldBeLessThanTen],
       child: Scaffold(
         appBar: AppBar(title: const Text('Counter')),
         body: Center(

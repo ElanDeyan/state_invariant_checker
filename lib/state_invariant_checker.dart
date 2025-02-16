@@ -2,13 +2,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 
 /// Typedef for invariants, a simple predicate.
+/// Intended to be pure, without side effects.
 typedef StateInvariant = bool Function();
 
 /// A widget that checks for state invariants in a Flutter application.
 ///
 /// This widget is used to ensure that certain conditions or invariants
-/// hold true within the state of the application. It extends
-/// [StatelessWidget], meaning it does not have mutable state of its own.
+/// hold true within the state of the application. It's intended that
+/// [invariants] should be pure functions.
+/// It extends [StatelessWidget], meaning it does not have mutable
+/// state of its own.
 ///
 /// For example:
 ///
@@ -35,9 +38,11 @@ final class StateInvariantChecker extends StatelessWidget {
 
   /// A set of state invariants that need to be checked.
   ///
-  /// This set contains instances of [StateInvariant] which represent
+  /// This [List] contains instances of [StateInvariant] which represent
   /// conditions or rules that the state must satisfy.
-  final Set<StateInvariant> invariants;
+  ///
+  /// These invariants should be pure, without side effects.
+  final List<StateInvariant> invariants;
 
   /// The child widget that this widget will display.
   final Widget child;
